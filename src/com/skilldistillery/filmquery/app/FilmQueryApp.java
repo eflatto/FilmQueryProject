@@ -1,6 +1,7 @@
 package com.skilldistillery.filmquery.app;
 
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class FilmQueryApp {
 
 	public static void main(String[] args) throws SQLException {
 		FilmQueryApp app = new FilmQueryApp();
-		//app.test();
+		// app.test();
 		app.launch();
 	}
 
@@ -51,14 +52,40 @@ public class FilmQueryApp {
 				int id = input.nextInt();
 				Film filmById = db.findFilmById(id);
 				if (filmById != null) {
-                    System.out.println("Found film: " + filmById.getTitle()+"----- Year:"+filmById.getReleaseYear()+ "----Description: "+
-				filmById.getDescription());
-                } else {
-                    System.out.println("Film with id " + id + " not found.");
-                }
-                break;
+					System.out.println("Found film: " + filmById.getTitle() + "----- Year:" + filmById.getReleaseYear()+"----Rating "+filmById.getRating()
+							+ "----Description: " + filmById.getDescription()+"------Language: "+filmById.getLanguage()+"---Actors: " +filmById.getActorList());
+				} else {
+					System.out.println("Film with id " + id + " not found.");
+				}
+				break;
+
+			case 2:
+				System.out.print("Enter search keyword: ");
+				int count = 0;
+				String keyword = input.next();
+				List<Film> filmByKeyWord = db.findFilmsByKeyword(keyword);
+				if (filmByKeyWord.isEmpty()) {		
+					System.out.println("Film with keyword " + keyword + " not found.");
+				} else {
+					for(Film film : filmByKeyWord) {
+						System.out.println(++count+" "+film.getTitle() + "----- Year:" + film.getReleaseYear()+"----Rating "+film.getRating()
+						+ "----Description: " + film.getDescription()+"------Language: "+film.getLanguage()+"---Actors: " +film.getActorList());
+					}
+					System.out.println(count +" row(s) in set ");
+				}
+				
+				
+
+				break;
+
+			case 3:
+				System.out.println("Exiting application.");
+				System.exit(0);
+				break;
+			default:
+				System.out.println("Invalid choice. Please try again.");
+				break;
 			}
-			
 		}
 	}
 

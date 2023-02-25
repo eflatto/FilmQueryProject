@@ -6,6 +6,14 @@ import java.util.Objects;
 
 public class Film {
 	List<Actor> actorList = new ArrayList<>();
+	public List<Actor> getActorList() {
+		return actorList;
+	}
+
+
+	public void setActorList(List<Actor> actorList) {
+		this.actorList = actorList;
+	}
 	private Integer id;
 	private String title;
 	private String description;
@@ -17,6 +25,7 @@ public class Film {
 	private Double replacementCost;
 	private String rating;
 	private String specialFeature;
+	private String language;
 	public Film(Integer id, String title, String description, Integer releaseYear, Integer languageId,
 			Integer rentalDuration, Double rentalRate, Integer length, Double replacementCost, String rating,
 			String specialFeature) {
@@ -33,6 +42,27 @@ public class Film {
 		this.rating = rating;
 		this.specialFeature = specialFeature;
 	}
+	
+	
+	public Film(Integer id, String title, String description, Integer releaseYear,
+			Integer languageId, Integer rentalDuration, Double rentalRate, Integer length, Double replacementCost,
+			String rating, String specialFeature, String language) {
+	
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.releaseYear = releaseYear;
+		this.languageId = languageId;
+		this.rentalDuration = rentalDuration;
+		this.rentalRate = rentalRate;
+		this.length = length;
+		this.replacementCost = replacementCost;
+		this.rating = rating;
+		this.specialFeature = specialFeature;
+		this.language = language;
+	}
+
+
 	public Film() {
 		// TODO Auto-generated constructor stub
 	}
@@ -100,6 +130,17 @@ public class Film {
 	public String getSpecialFeature() {
 		return specialFeature;
 	}
+	
+	public String getLanguage() {
+		return language;
+	}
+
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+
 	public void setSpecialFeature(String specialFeature) {
 		this.specialFeature = specialFeature;
 	}
