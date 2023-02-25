@@ -5,6 +5,6 @@
 ## Technologies Used
 Java, SQL , Maven
 
-##Lessons Learned
+## Lessons Learned
 
-##How to run it# FilmQueryProject
+## How to run it# FilmQueryProject
