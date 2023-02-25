@@ -14,11 +14,17 @@ public class FilmQueryApp {
 
 	DatabaseAccessor db = new DatabaseAccessorObject();
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args)  {
 		FilmQueryApp app = new FilmQueryApp();
 		// app.test();
-		app.launch();
+		try {
+			app.launch();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+
 
 	private void test() throws SQLException {
 		Film film = db.findFilmById(1);
