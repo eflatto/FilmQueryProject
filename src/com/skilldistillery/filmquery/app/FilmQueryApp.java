@@ -60,15 +60,29 @@ public class FilmQueryApp {
 				if (filmById != null) {
 					System.out.println("Found film: " + filmById.getTitle() + "----- Year:" + filmById.getReleaseYear()+"----Rating "+filmById.getRating()
 							+ "----Description: " + filmById.getDescription()+"------Language: "+filmById.getLanguage()+"---Actors: " +filmById.getActorList());
+					int choice2;
+					System.out.println("Enter your choice:");
+					System.out.println("1. Return to main menu");
+					System.out.println("2. View all film details");
+					choice2=input.nextInt();
+					switch (choice2) {
+					case 1:
+						System.out.println("returning to main menu");
+						break;
+					case 2:
+						System.out.println(db.findFilmById(id));
+						break;
+					default:
+						System.out.println("Invalid choice. Please try again.");
+						break;
+					}
 				} else {
 					System.out.println("Film with id " + id + " not found.");
 				}
 				break;
 
 			case 2:
-				
-				
-				
+			
 				System.out.print("Enter search keyword: ");
 				int count = 0;
 				String keyword = input.next();
@@ -80,12 +94,13 @@ public class FilmQueryApp {
 					for(Film film : filmByKeyWord) {
 						count++;
 						System.out.println(film.getTitle() + "----- Year:" + film.getReleaseYear()+"----Rating "+film.getRating()
-						+ "----Description: " + film.getDescription()+"------Language: "+film.getLanguage()+"---Actors: " +film.getActorList());
+						+ "----Description: " + film.getDescription()+"------Language: "+film.getLanguage()+"---Actors: " +film.getActorList()+"----Category "+film.getCategory());
 					}
 					long endTime = System.currentTimeMillis();
 
 					float duration = (endTime - startTime)/1000F;
 					System.out.println(count+" row(s) in set ("+(duration)+" seconds)");
+					
 				}
 				
 				

@@ -26,6 +26,10 @@ public class Film {
 	private String rating;
 	private String specialFeature;
 	private String language;
+	private String category;
+	
+
+
 	public Film(Integer id, String title, String description, Integer releaseYear, Integer languageId,
 			Integer rentalDuration, Double rentalRate, Integer length, Double replacementCost, String rating,
 			String specialFeature) {
@@ -144,6 +148,17 @@ public class Film {
 	public void setSpecialFeature(String specialFeature) {
 		this.specialFeature = specialFeature;
 	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -157,13 +172,17 @@ public class Film {
 		Film other = (Film) obj;
 		return Objects.equals(id, other.id);
 	}
+
+
 	@Override
 	public String toString() {
 		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
 				+ ", languageId=" + languageId + ", rentalDuration=" + rentalDuration + ", rentalRate=" + rentalRate
 				+ ", length=" + length + ", replacementCost=" + replacementCost + ", rating=" + rating
-				+ ", specialFeature=" + specialFeature + "]";
+				+ ", specialFeature=" + specialFeature + ", language=" + language + ", category=" + category + "]";
 	}
+
+
 	
 
 	
