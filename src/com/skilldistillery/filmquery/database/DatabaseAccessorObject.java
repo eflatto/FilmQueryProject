@@ -78,7 +78,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		
 		return actor;
 	}
-
 	@Override
 	public List<Actor> findActorsByFilmId(int filmIde) {
 		// TODO Auto-generated method stub

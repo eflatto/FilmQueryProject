@@ -97,7 +97,6 @@ public class FilmQueryApp {
 						+ "----Description: " + film.getDescription()+"------Language: "+film.getLanguage()+"---Actors: " +film.getActorList()+"----Category "+film.getCategory());
 					}
 					long endTime = System.currentTimeMillis();
-
 					float duration = (endTime - startTime)/1000F;
 					System.out.println(count+" row(s) in set ("+(duration)+" seconds)");
 					
