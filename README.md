@@ -1,6 +1,9 @@
 # FilmQueryProject
 
 ## Description
+<p>
+This project allows users to query a database of films and actors using various search criteria, including film ID and keywords.
+</p>
 
 
 ## Classes
@@ -72,5 +75,3 @@ The Film class represents a movie. It has 12 fields each mapping to the attribut
 <li>I learned more about the Java Database Connectivity (JDBC) and how to establish a connection to a database using a JDBC driver</li>
 <li>I learned how to use Maven to manage my dependencies instead of downloading and managing each library. I used Maven to create a pom.xml file and declare the dependency to automatically download the needed dependency for connecting with JDBC and MYSQL</li>
 </ul>
-
-## How to run it

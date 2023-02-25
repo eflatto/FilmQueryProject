@@ -181,6 +181,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				films.add(film);
 				actors = findActorsByFilmId(film.getId());
 				film.setActorList(actors);
+				
 			}
 			rs.close();
 			stmt.close();

@@ -66,6 +66,9 @@ public class FilmQueryApp {
 				break;
 
 			case 2:
+				
+				
+				
 				System.out.print("Enter search keyword: ");
 				int count = 0;
 				String keyword = input.next();
@@ -73,11 +76,16 @@ public class FilmQueryApp {
 				if (filmByKeyWord.isEmpty()) {		
 					System.out.println("Film with keyword " + keyword + " not found.");
 				} else {
+					long startTime = System.currentTimeMillis();
 					for(Film film : filmByKeyWord) {
-						System.out.println(++count+" "+film.getTitle() + "----- Year:" + film.getReleaseYear()+"----Rating "+film.getRating()
+						count++;
+						System.out.println(film.getTitle() + "----- Year:" + film.getReleaseYear()+"----Rating "+film.getRating()
 						+ "----Description: " + film.getDescription()+"------Language: "+film.getLanguage()+"---Actors: " +film.getActorList());
 					}
-					System.out.println(count +" row(s) in set ");
+					long endTime = System.currentTimeMillis();
+
+					float duration = (endTime - startTime)/1000F;
+					System.out.println(count+" row(s) in set ("+(duration)+" seconds)");
 				}
 				
 				
